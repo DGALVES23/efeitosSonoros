@@ -1,14 +1,17 @@
 :root {
   --cinza: #aaa;
-  --vermelha: #e93d50;
-  --vermelha-escura: #af303f;
+  --azulClaro: #4898d6;
+  --vermelha-escura: #bb2334;
   --branca: #fff;
-  --luz: rgb(229, 255, 0);
+  --vermelhoClaro: rgb(222, 88, 88);
+  --azul: #332960e4;
 }
 
 body {
   align-items: center;
-  background: linear-gradient(90deg, #1f295b 0%,#0a3087 100%);
+  background-image: url(/efeitosSonoros/images/background.jpeg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -23,33 +26,31 @@ h1 {
 }
 
 .teclado {
-  background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%);
-  box-shadow: 6px 8px 0 6px #666, 10px 10px 10px #000;
   border-radius: 30px;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding: 10px;
 }
 
 .tecla {
-  background-color: var(--branca);
-  border-radius: 60px;
-  box-shadow: 3px 3px 0 var(--cinza);
-  color: var(--vermelha);
+  background-color: var(--azul);
+  box-shadow: 2px 2px 5px var(--azulClaro);
+  border-radius: 10px;
+  color: var(--azulClaro);
   cursor: pointer;
   height: 120px;
-  font-size: 1.75em;
+  font-size: 1.2em;
   font-weight: bold;
   line-height: 120px;
   text-align: center;
-  width: 120px;
+  width: 200px;
 }
 
 .tecla.ativa,
 .tecla:active {
-  background-color: var(--vermelha);
-  border: 4px solid  var(--vermelha);
+  background-color: var(--vermelhoClaro);
+  border: 4px solid  var(--vermelhoClaro);
   box-shadow: 3px 3px 0 var(--vermelha-escura) inset;
   color: var(--branca);
   outline: none;
@@ -57,11 +58,16 @@ h1 {
 
 .tecla.focus,
 .tecla:focus {
+  cursor: pointer;
   outline: none;
-  box-shadow: 1px 1px 10px var(--luz);
+  box-shadow: 4px 4px 10px var(--vermelhoClaro);
 }
 
 .tecla.active:focus,
 .tecla:active:focus {
-  box-shadow: 3px 3px 0 var(--vermelha-escura) inset, 1px 1px 10px var(--luz);
+  box-shadow: 5px 5px 0 var(--vermelha-escura);
+}
+
+.tecla:hover{
+  box-shadow: 2px 2px 5px #fff;
 }
